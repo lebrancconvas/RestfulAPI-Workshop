@@ -1,0 +1,20 @@
+{
+  "user1": {
+    "id":101,
+    "name":"Tarwann",
+    "age": 21,
+    "center":"Namida Surprise"
+  },
+  "user2": {
+    "id":102,
+    "name":"Karaked",
+    "age":25,
+    "center":"ChamoyChamai"
+  },
+  "user3": {
+    "id":103,
+    "name":"Preecha",
+    "age":50,
+    "center":"Thirty-Million of Mine"
+  }
+}
