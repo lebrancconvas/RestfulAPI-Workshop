@@ -18,6 +18,25 @@ app.get('/getUsers/:id', function (req, res) {
   });
 });
 
+var user = {
+  "user4":{
+    "id":4,
+    "user-id":104,
+    "name":"Muto",
+    "age":18,
+    "center":"Destiny Draw"
+  }
+}
+
+app.post('/addUser',function(req,res){
+  fs.readFile(__dirname + "/" + "user.json" , 'utf8' , function(err,data){
+    data = JSON.parse(data);
+    data["user4"] = user["user4"];
+    console.log(data);
+    res.end(JSON.stringify(data));
+  });
+});
+
 var server = app.listen(8081, function(){
   var host = server.address().address
   var port = server.address().port
