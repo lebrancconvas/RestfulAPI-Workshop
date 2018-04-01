@@ -9,6 +9,15 @@ app.get('/getUsers' , function (req, res) {
   });
 });
 
+app.get('/getUsers/:id', function (req, res) {
+  fs.readFile(__dirname + "/" + "user.json" , 'utf8' , function (err, data){
+    var users = JSON.parse(data); //แปลงข้อมูลให้เป็นก้อน User ทั้งหมด
+    var user = users["user" + req.params.id] //เพิ่มเงื่อนไข โดย req.params.id คือเลข id จาก user.json
+    console.log(user);
+    res.end(JSON.stringify(user)); //ส่งข้อมูลกลับมาแสดงในรูป String
+  });
+});
+
 var server = app.listen(8081, function(){
   var host = server.address().address
   var port = server.address().port
